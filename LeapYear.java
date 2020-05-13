@@ -9,7 +9,7 @@ public class LeapYear {
         while(!(fileContent = bufferedReader.readLine()).equals("STOP")) {
             System.out.println(fileContent);
             year = Integer.parseInt(fileContent);
-            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0 && year % 4000 != 0)) {
                 System.out.println("Leap Year");
             } else {
                 System.out.println("Not Leap Year");

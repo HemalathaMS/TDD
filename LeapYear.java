@@ -6,24 +6,10 @@ public class LeapYear {
         BufferedReader bufferedReader = new BufferedReader(fileReader);    
         String fileContent = "";
         int year = 0;
-        boolean isLeapYear = true;
         while(!(fileContent = bufferedReader.readLine()).equals("STOP")) {
             System.out.println(fileContent);
             year = Integer.parseInt(fileContent);
-            if (year % 4 == 0) {
-                if (year % 100 == 0) {
-                    if (year % 400 == 0) {
-                        isLeapYear = true;
-                    } else {
-                        isLeapYear = false;
-                    }
-                } else {
-                    isLeapYear = true;
-                }
-            } else {
-                isLeapYear = false;
-            }
-            if (isLeapYear) {
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
                 System.out.println("Leap Year");
             } else {
                 System.out.println("Not Leap Year");
